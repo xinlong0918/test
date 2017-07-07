@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重选择</title>
+</head>
+<body>
+<input type="text" style="height: 40px;font-size: 20px;">
+<input type="checkbox" value="1">
+<input type="checkbox" value="2">
+<input type="checkbox" value="3">
+<input type="checkbox" value="4">
+<input type="checkbox" value="5">
+<input type="checkbox" value="6">
+<input type="checkbox" value="7">
+<input type="checkbox" value="8">
+</body>
+<script src="jquery-1.10.1.min.js"></script>
+<script>
+    var arrCheck = [], arrData = [{id: "1",},2,3,4,5,6,7,8];
+    $("input").on("click",function (e) {
+        console.log($(this).val())
+    })
+</script>
+</html>

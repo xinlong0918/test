@@ -1,0 +1,22 @@
+html{font-size:62.5%;tap-highlight-color:rgba(255,255,255,0);-webkit-tap-highlight-color:rgba(255,255,255,0)}
+html,body{height:100%;width:100%;}
+body{    margin: 0 auto;
+    max-width: 640px;
+    min-width: 300px;
+    background: #fff;}
+*{padding:0;margin:0;font-style:normal;font-weight:400;font-family:"微软雅黑",arial;color:#333;font-size:15px;box-sizing:border-box;}
+ul,li{list-style:none}
+input[type=text],textarea{-webkit-appearance:none;border:0;outline:medium}
+input[type=button]{-webkit-appearance:none}
+input[type=search]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:none}
+a{color:#2b2b2b;text-decoration:none;-webkit-touch-callout:none}
+a:visited,a:hover{text-decoration:none}
+.clear:before,.clear:after{content:".";display:block;height:0!important;line-height:0!important;visibility:hidden}
+.clear:after{clear:both}
+.clear{zoom:1}
+.fl{float:left}
+.fr{float:right}
+input,button,select,textarea{outline:0}
+textarea{resize:none}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*zoom:1}

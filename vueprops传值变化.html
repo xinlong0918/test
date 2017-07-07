@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+        <!-- <input v-model="messsage" > -->  <!--input绑定实例中data中的message-->
+        <div >
+            <child v-bind:my-message="messsage"></child> <!--子组件绑定实例中data中的message-->
+        </div>
+
+    </div>
+
+    <script>
+        Vue.config.debug = true;
+        Vue.component('child',{
+            props: ['myMessage'],   //VUE实例中myMessage 等价于my-message
+            template: '<div><p v-for="i in myMessage">{{ i.url }}</p></div>'
+        });
+        var vm = new Vue({
+            el: '#app1',
+            data:{
+                messsage:[
+                	
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

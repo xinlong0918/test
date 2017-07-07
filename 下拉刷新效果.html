@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/demoUtils.js"></script>
+	<style type="text/css">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+
+		html {
+			-ms-touch-action: none;
+		}
+
+		body,ul,li {
+			border: 0;
+		}
+
+		body {
+			font-size: 12px;
+			font-family: ubuntu, helvetica, arial;
+			overflow: hidden; /* this is important to prevent the whole page to bounce */
+		}
+
+		#wrapper {
+			position: absolute;
+			z-index: 1;
+			top: 45px;
+			bottom: 48px;
+			left: 0;
+			width: 100%;
+			background: #ccc;
+			overflow: hidden;
+		}
+
+		#scroller {
+			position: absolute;
+			z-index: 1;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			width: 100%;
+			-webkit-transform: translateZ(0);
+			-moz-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			-o-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+			-ms-text-size-adjust: none;
+			-o-text-size-adjust: none;
+			text-size-adjust: none;
+		}
+		p{height: 60px;line-height: 30px;}
+		p:nth-child(2n+1){
+			background: #999;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="scroller">
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+			<p>下拉刷新</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	var myScroll = new IScroll('#wrapper', { keyBindings: true }),
+		isRefresh = false;
+
+	document.addEventListener('touchmove', function (e) { 
+		e.preventDefault();
+		if(isRefresh) return;
+			// //请求数据
+			// $.ajax({
+			// 	url:"",
+			// 	success:function(){
+			// 		//处理代码，加载数据
+			
+			// 		isRefresh = false;
+			// 	}
+			// });
+		isRefresh = true;
+	 }, isPassive() ? {
+		capture: false,
+		passive: false
+	} : false);
+</script>
+</html>

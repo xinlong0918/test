@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>支付成功</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!--删除默认的苹果工具栏和菜单栏-->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 作用是控制状态栏显示样式-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
+	<meta name="format-detection" content="telephone=no"/>
+	<!--浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页中的连接时就无需进行 DNS 的解析-->
+	<meta http-equiv="x-dns-prefetch-control" content="on"/>
+	<link rel="stylesheet" type="text/css" th:href="@{${domainUrl}+'/css/reset.css'}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{${domainUrl}+'/css/paySuccess.css'}"/>
+	<script type="text/javascript" th:src="@{${domainUrl}+'/js/jquery-1.8.3.min.js'}"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+			var docEl = doc.documentElement
+	            ,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function () {
+	    		var clientWidth = docEl.clientWidth;
+	    		if (!clientWidth) return;
+	    		docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+			};
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<script type="text/javascript">
+		function closeWindow(){
+			var ua = navigator.userAgent.toLowerCase();   
+			if(ua.match(/MicroMessenger/i)=="micromessenger") {   
+			    WeixinJSBridge.call('closeWindow');//微信
+			} else if(ua.indexOf("alipay")!=-1){   
+			 	AlipayJSBridge.call('closeWebview'); //支付宝 
+			}else if(ua.indexOf("baidu")!=-1){   
+			 	BLightApp.closeWindow();//百度钱包
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="main_bg">
+			支付成功
+		</div>
+		<div class="main_count" th:text="${amount}"></div>
+		<div class="main_merchant">
+			<p th:text="${'收款方：'+tradeInfo.merchantName}"></p>
+		</div>
+		<div class="action_btn">
+			<button onclick="closeWindow()">完成</button>
+		</div>
+	</div>
+	<div class="banner" th:if="${payPop != null}">
+		<a th:href="${payPop.redirectUrl}" target="_blank"><img th:src="${payPop.picUrl}"/></a>
+	</div>
+</body>
+</html>

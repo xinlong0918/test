@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+
+</body>
+<script>
+    function get(str) {
+        var promise = new Promise(function (resolve,reject) {
+            var ran = parseInt(Math.random()*6)+1;
+            console.log('random:'+ran);
+            str = str + ran;
+            resolve(str);
+        })
+        return promise;
+    }
+    get(0).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+        return get(res);
+    }).then(function (res) {
+        console.log(res);
+    });
+</script>
+</html>

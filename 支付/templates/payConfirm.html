@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>确认支付</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!--删除默认的苹果工具栏和菜单栏-->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 作用是控制状态栏显示样式-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
+	<meta name="format-detection" content="telephone=no"/>
+	<!--浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页中的连接时就无需进行 DNS 的解析-->
+	<meta http-equiv="x-dns-prefetch-control" content="on"/>
+	<!-- uc强制竖屏 -->
+	<meta name="screen-orientation" content="portrait"/>
+	<!-- QQ强制竖屏 -->
+	<meta name="x5-orientation" content="portrait"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/payConfirm.css"/>
+	<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="../static/js/payConfirm.js"></script>
+	<script type="text/javascript">
+//		(function (doc, win) {
+//			var docEl = doc.documentElement
+//	            ,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+//			recalc = function () {
+//	    		var clientWidth = docEl.clientWidth;
+//	    		if (!clientWidth) return;
+//	    		docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+//			};
+//			if (!doc.addEventListener) return;
+//			win.addEventListener(resizeEvt, recalc, false);
+//			doc.addEventListener('DOMContentLoaded', recalc, false);
+//		})(document, window);
+	</script>
+	<script src="../static/js/flexible.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="merchant_bg" text="${merchantName}">
+		</div>
+		<div class="pay_account">
+			<p id="payAccount">请输入消费金额</p>
+			<span class="delicon"></span>
+		</div>
+	</div>
+	<div class="main">
+		<div class="info">
+			<p>
+				提供技术支持 中国人保承保支付安全
+			</p>
+		</div>
+		<div class="keyboard">
+			<div class="row1 row clearfix">
+				<span>7</span>
+				<span>8</span>
+				<span>9</span>
+				<span class="del">删除</span>
+			</div>
+			<div class="row2 row clearfix">
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+			</div>
+			<div class="row3 row clearfix">
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+			</div>
+			<div class="row4 row clearfix">
+				<span>00</span>
+				<span>0</span>
+				<span>.</span>
+			</div>
+			<div class="pay_confirm">
+				<span>确认<br/>支付</span>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" name="ticket" id="ticket" value="${ticket}"/>
+	<input type="hidden" name="tradeInfo" id="tradeInfo" value="${tradeInfo}"/>
+	<input type="hidden" name="openId" id="openId" value="${openId}"/>
+	<input type="hidden" name="payType" id="payType" value="${payType}"/>
+	<input type="hidden" name="domainUrl" id="domainUrl" value="${domainUrl}"/>
+	<div class="toast">
+		网络连接异常，请检查网络连接
+	</div>
+</body>
+</html>

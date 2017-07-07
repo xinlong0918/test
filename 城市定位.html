@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=hLzWo0VsyW7dGUD5BGaj5xlC4i4a0lKl&v=1.0"></script>   
+<script>   
+//手动定位  
+    function user_position(){  
+        if (navigator.geolocation){  
+            navigator.geolocation.getCurrentPosition(function (position) {  
+                var gg_lon = position.coords.longitude;  
+                var gg_lat =  position.coords.latitude;   
+                var gc = new BMap.Geocoder();   
+                var pointAdd = new BMap.Point(gg_lon, gg_lat);  
+                gc.getLocation(pointAdd, function(rs){  
+                        // 百度地图解析城市名  
+                        var city = rs.addressComponents.city;  
+                        //或者任何你想要的其他信息  
+                        console.log(city);  
+                   }  
+                );  
+            });    
+        }else{  
+           alert("当前浏览器不支持,请手动定位.");  
+        }  
+	}  
+</script>  
+</html>

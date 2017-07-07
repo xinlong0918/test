@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.progress{
+	    	width: 60px;
+	        height: 60px;
+	        background: #ccc;
+	        z-index: 100;
+	        margin: 100px 0 0 100px;
+	        position: relative;
+	    }
+	    .progress span{
+	    	position: absolute;width: 12px;height: 12px;border-radius: 6px;
+	    	top:24px;left: 0;background: green;
+	    	/* animation: pro .5s; */
+
+	    }
+	    @keyframes pro {
+	    	from{
+	    		width: 12px;
+	    	}to{
+	    		width: 60px;
+	    	}
+	    }
+	</style>
+</head>
+<body>
+	<div class="progress">
+		<span id="progress"></span>
+	</div>
+	<button id="btn1">1111</button><button id="btn2">2222</button>
+</body>
+<script type="text/javascript">
+	// function progress () {
+	// 	document.querySelector(".progress").style.display = 'block'
+	// 	var span = document.querySelector("#progress")
+	// 	var w = 12
+	// 	var t = setInterval(function(){
+	// 		w += 1
+	// 		span.style.width = w + 'px'
+	// 		// console.log(w)
+	// 		if(w>=60){
+	// 			clearInterval(t)
+	// 		}
+	// 	},5)
+	// }
+	// progress();
+	document.querySelector("#btn1").onclick=function(){
+		document.querySelector("#progress").style.animation = 'pro .5s'
+	}
+	document.querySelector("#btn2").onclick=function(){
+		document.querySelector("#progress").style.animation = ''
+	}
+</script>
+</html>

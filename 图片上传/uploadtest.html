@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片上传</title>
+    <script src="lrz.all.bundle.js"></script>
+    <script src="JYImgUpload.js"></script>
+    <link rel="stylesheet" href="../css/icon.css">
+</head>
+<body>
+<input type="file">
+<script>
+    document.querySelector("input").onchange = function () {
+        imgUpload(this.files[0],function (res) {
+            window.open("http://"+res)
+        },true)
+    }
+
+
+
+</script>
+</body>
+</html>

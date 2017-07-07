@@ -1,0 +1,166 @@
+{
+    code: 200,
+    message: "OK",
+    detail: "",
+    timestamp: 1491986920924,
+    data:{
+        merchant:{
+            id: "merchant",
+            name: "商户管理",
+            rank: 0,
+            icon: "ios-navigate",
+            menuCount: 0
+            merchantList:{
+                    id: "merchant-list",
+                    name: "商户列表",
+                    systemId: "",
+                    parentId: "",
+                    url: "merchant/list",
+                    component:"MerchantList",
+
+                    rank: 1,
+                    recommend: "true",
+                    createTime: null,
+                    updateTime: null,
+                    labels: "35",
+                    myMenu: true,
+                    subMenuList: null
+                },
+            merchantAuditList{
+                id: "merchant-audit-list",
+                name: "待审核商户",
+                systemId: " ",
+                parentId: "",
+                url: "merchant/audit/list",
+                component:"MerchantAuditList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+            merchantRegisterList{
+                id: "merchant-register-list",
+                name: "商户进件",
+                systemId: " ",
+                parentId: "",
+                url: "merchant/audit/list",
+                component:"MerchantAuditList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+        },
+        agent:{
+            id: "agent",
+            name: "代理商管理",
+            rank: 0,
+            icon: "ios-keypad",
+            menuCount: 0,
+            agentList{
+                id: "agent-list",
+                name: "一级代理商",
+                systemId: "",
+                parentId: "",
+                url: "agent/list",
+                component:"AgentList",
+
+                rank: 1,
+                recommend: "true",
+                createTime: null,
+                updateTime: null,
+                labels: "35",
+                myMenu: true,
+                subMenuList: null
+            },
+            agentReviewList:{
+                id: "agent-reviewList",
+                name: "代理商审核",
+                systemId: " ",
+                parentId: "",
+                url: "agent/reviewList",
+                component:"AgentReviewList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+            salesmanList:{
+                id: "salesman-list",
+                name: "业务员管理",
+                systemId: " ",
+                parentId: "",
+                url: "salesman/list",
+                component:"SalesmanList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+            agentAlllist:{
+                id: "agent-alllist",
+                name: "全部代理商",
+                systemId: " ",
+                parentId: "",
+                url: "agent/alllist",
+                component:"AgentAllList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+            agentSettlementList:{
+                id: "agent-settlement-list",
+                name: "代理商结算",
+                systemId: " ",
+                parentId: "",
+                url: "agent/settlement/list",
+                component:"AgentSettlementList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            },
+            agentSettlementList:{
+                id: "agent-settlement-list",
+                name: "所有代理商结算",
+                systemId: " ",
+                parentId: "",
+                url: "agent/allsettlement/list",
+                component:"AgentAllSettlementList",
+
+                rank: 1,
+                recommend: "false",
+                createTime: null,
+                updateTime: null,
+                labels: null,
+                myMenu: true,
+                subMenuList: null
+            }
+        },
+    }
+}

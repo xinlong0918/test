@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试js</title>
+    <!-- <link href="http://static.jyall.com/eos/cop/css/promotion-system.css" type="text/css" rel="stylesheet" />
+    <link href="http://static.jyall.com/eos/cop/css/reset.css" type="text/css" rel="stylesheet" /> -->
+    <script type="text/javascript" src="https://static.jyall.com/eos/goods/js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+.tab{
+    display: inline-block;
+    width: 315px;
+}
+.tab li{
+    display: inline-block;
+    width: 30%;
+    border-right: solid 1px grey;
+    border-bottom: solid 1px grey;
+}
+.cur{
+    background: #EF7E33;
+}
+.content li{
+    list-style: none;
+    display: none;
+}
+.content .isshow{
+    display: block;
+}
+dl{display: inline-block;width: 100%;}
+dt,dd{display: inline-block;}
+dt{width: 46%;}
+dd{width: 47%;text-align: right;}
+</style>
+</head>
+<body>
+<input id="jywk" value="jywk" style="display: none;">
+    <img src="http://image1.jyall.com/v1/tfs/T14uA_BKY_1RXrhCrK.jpg" alt="" id="test_img" style="display:none" />
+    <div id="browser" style="
+cursor: pointer;
+">点击测试</div>
+<div id="try"><a link="#006699" alink="#33CCFF" vlink="#CCCCCC" target="_black" href="http://image1.jyall.com/v1/tfs/T1LRLTBCdv1RXrhCrK.jpg">下载</a></div>
+    <xmp><span>333<span></xmp>
+    <tt>打字机效果</tt>
+    <ryby>介绍一点什么</ryby><rt>不介绍了</rt>
+    <center>居中一点</center>
+    <pre>预格式化</pre>
+    <blockquote>缩排是事实上事实上事实上事实上事实上事实上事实是事实上事实上事实上事实上事实上事实上事实上事实上是事实上事实上事实上事实上事实上事实上事实上事实上是事实上事实上事实上事实上事实上事实上事实上事实上上事实上事实上的</blockquote>
+    <p>段落</br>换个行吧</p>
+    <hr align="left" width="100%" size="1" color="yellow">这个分割线666</hr>
+    <ul>
+    <li>无序列表</li>
+    <li>....</li>
+<li>鸭脖有点辣</li>
+</ul>
+<ol>
+<li>有序列表111</li>
+<li>有序列表111222</li>
+<li>有序列表111333</li>
+</ol>
+<div>
+<dl>
+<dt>名词</dt><dd>解释一下这个名词</dd>
+</dl>
+<dl>
+<dt>名词</dt><dd>解释一下这个名词</dd>
+</dl>
+<dl>
+<dt>名词</dt><dd>解释一下这个名词</dd>
+</dl>
+</div>
+
+</body>
+<script type="text/javascript">
+    $(function(){
+        $('#browser').on('click',function(){
+            var messageBody={
+                jumpUrl:"https://m.jyall.com/article/f/",
+                imageUrl :"https://image1.jyall.com/v1/tfs/T14t_TBKx_1R4cSCrK.png",
+                title:"测试标题",
+                content:"测试描述"
+            }
+            alert('分享..');
+            alert(window);
+            alert(window.webkit);
+            alert(window.webkit.messageHandlers);
+            alert(window.webkit.messageHandlers.shareOperation);
+            alert(window.webkit.messageHandlers.shareOperation.postMessage({}));
+            window.webkit.messageHandlers.shareOperation.postMessage(messageBody)
+        });
+    });
+    window.appShareSuccess = function(){
+        alert('分享成功');
+        return true;
+    }
+
+    (function($){
+
+    })(jQuery);
+</script>
+</html>

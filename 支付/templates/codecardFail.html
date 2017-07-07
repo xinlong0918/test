@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>温馨提示</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!--删除默认的苹果工具栏和菜单栏-->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 作用是控制状态栏显示样式-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
+	<meta name="format-detection" content="telephone=no"/>
+	<!--浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页中的连接时就无需进行 DNS 的解析-->
+	<meta http-equiv="x-dns-prefetch-control" content="on"/>
+	<link rel="stylesheet" type="text/css" th:href="@{${domainUrl}+'/css/reset.css'}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{${domainUrl}+'/css/codeFail.css'}"/>
+	<script type="text/javascript" th:src="@{${domainUrl}+'/js/jquery-1.8.3.min.js'}"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+			var docEl = doc.documentElement
+	            ,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function () {
+	    		var clientWidth = docEl.clientWidth;
+	    		if (!clientWidth) return;
+	    		docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+			};
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            var failType = $("#type").val();
+            setFailType(failType);
+        });
+        function setFailType (failType) {
+        	failType = parseInt(failType);
+            var str = "", className = "";
+            switch (failType) {
+                case 1:
+                    className = "type1";
+                    str = "请使用收吧APP扫一扫绑定";
+                    break;
+                case 2:
+                    className = "type2";
+                    str = "该店铺还在认证中，暂时不能付款";
+                    break;
+                case 3:
+                    className = "type3";
+                    str="该店铺已被停用，暂时不能付款";
+                    break;
+                default:
+                    className = "type4";
+                    str = "请重新扫码或联系店内人员处理";
+                    break;
+            }
+            $(".main").addClass(className).find("p").text(str);
+        }
+	</script>
+</head>
+<body>
+	<div class="main">
+		<p></p>
+	</div>
+	<div class="banner" th:if="${payPop != null}">
+		<a th:href="${payPop.redirectUrl}" target="_blank"><img th:src="${payPop.picUrl}"/></a>
+	</div>
+	<input type="hidden" name="type" id="type" th:value="${type}"/>
+</body>
+</html>
