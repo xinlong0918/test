@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time-choose</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        #choose {
+            width: 80%;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            line-height: 50px;
+            margin: 50px auto;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="choose">选择年月</div>
+</body>
+<script src="js/picker.min.js"></script>
+<script type="text/javascript">
+    let data = [
+        {
+            "name": 2011,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2012,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2013,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2014,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2015,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2016,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+                , {"name": 8}
+                , {"name": 9}
+                , {"name": 10}
+                , {"name": 11}
+                , {"name": 12}
+            ]
+        },
+        {
+            "name": 2017,
+            "sub": [
+                {"name": 1}
+                , {"name": 2}
+                , {"name": 3}
+                , {"name": 4}
+                , {"name": 5}
+                , {"name": 6}
+                , {"name": 7}
+            ]
+        }
+    ]
+    var nameEl = document.getElementById('choose');
+    var first = [];
+    /*年 */
+    var second = [];
+    /* 月 */
+    var selectedIndex = [0, 0];
+    /* 默认选中的年月 */
+
+    var checked = [0, 0];
+    /* 已选选项 */
+    creatList(data, first);
+
+    if (data[selectedIndex[0]].hasOwnProperty('sub')) {
+        creatList(data[selectedIndex[0]].sub, second);
+    } else {
+        second = [{text: '', value: 0}];
+    }
+    var picker = new Picker({
+        data: [first, second],
+        selectedIndex: selectedIndex,
+        title: '选择年月'
+    });
+
+    picker.on('picker.select', function (selectedVal, selectedIndex) {
+        var text1 = first[selectedIndex[0]].text;
+        var text2 = second[selectedIndex[1]].text;
+        nameEl.innerText = text1 + ' ' + text2;
+    });
+
+    picker.on('picker.change', function (index, selectedIndex) {
+        if (index === 0) {
+            firstChange();
+        }
+
+        function firstChange() {
+            second = [];
+            checked[0] = selectedIndex;
+            var firstData = data[selectedIndex];
+            if (firstData.hasOwnProperty('sub')) {
+                creatList(firstData.sub, second);
+            } else {
+                second = [{text: '', value: 0}];
+                checked[1] = 0;
+            }
+
+            picker.refillColumn(1, second);
+            picker.scrollColumn(1, 0)
+        }
+    });
+    picker.on('picker.valuechange', function (selectedVal, selectedIndex) {
+        console.log(selectedVal);
+        console.log(selectedIndex);
+    });
+
+    nameEl.addEventListener('click', function () {
+        picker.show();
+    });
+    function creatList(obj, list) {
+        obj.forEach(function (item, index, arr) {
+            var temp = new Object();
+            temp.text = item.name;
+            temp.value = index;
+            list.push(temp);
+        })
+    }
+</script>
+</html>

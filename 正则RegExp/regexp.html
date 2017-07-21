@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function sum(arr) {
+        return arr.reduce(function (x, y, index, arr) {
+            if(y==3){
+                arr.splice(3,1)
+                console.log(arr)
+            }
+            console.log('y:',y)
+            return x + y;
+        });
+    }
+
+    var arr = [1,2,3,4,5]
+    let result = sum(arr)
+    console.log(result)
+
+
+//    var s = 'JavaScript, VBScript, JScript and ECMAScript';
+//    var re=/[a-zA-Z]+Script/g;
+//
+//    console.log(0,re.test(s))
+//    // 使用全局匹配:
+//    console.log(1,re.exec(s)); // ['JavaScript']
+//    console.log(1,re.lastIndex); // 10
+//
+//    console.log(2,re.exec(s)); // ['VBScript']
+//    console.log(2,re.lastIndex); // 20
+//
+//    console.log(3,re.exec(s)); // ['JScript']
+//    console.log(3,re.lastIndex); // 29
+//
+//    console.log(4,re.exec(s)); // ['ECMAScript']
+//    console.log(4,re.lastIndex); // 44
+//
+//    console.log(5,re.exec(s)); // null，直到结束仍没有匹配到
+
+
+//    let reg = new RegExp('js.')
+//
+//    let str = 'jsab'
+//
+//    alert(reg.test(str))
+//    alert('a,b, ,c  d'.split(/[\s\,]+/)) // ['a', 'b', 'c', 'd'])
+
+
+
+</script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>滚动</title>
+    <style type="text/css">
+        .header-info{
+            height:50px;
+            background: #00f;
+            position: fixed;
+            top:0;width: 100%;
+        }
+        ul{
+            margin: 100px 0 0 0;
+        }
+        li{
+            height:30px;
+            width: 100%;
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+            background: #ff0;
+            background-clip: content-box;
+            padding:5px 0 ;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+<div class="header-info">
+    12345
+</div>
+    <div class="container">
+        <ul>
+            <li>item1</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>item2</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>item3</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>item4</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    let data = [1111111,2222222,3333333,4444444],
+        itemIndex = 0;
+    $(window).on('scroll',function (e) {
+        let arr = []
+        $('ul').each(function (index, i) {
+            arr.push(i.getBoundingClientRect().top)
+        })
+        console.log(111, arr)
+        let index = absMinNum(arr)
+        console.log('index： '+ index)
+        $('.header-info').text(data[index])
+    })
+
+    function absMinNum (arr) {
+        let min = 10000, i;
+        arr.forEach(function (item, index, arr) {
+            if(Math.abs(item) < min && item <= 0){
+                min = Math.abs(item)
+                i = index
+            }
+        })
+        return i
+    }
+    $('.header-info').on('click',function () {
+        $(document).scrollTop(0)
+    })
+</script>
+</html>
