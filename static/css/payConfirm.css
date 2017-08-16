@@ -1,0 +1,200 @@
+*{
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
+}
+body,html{
+	height: 100%;
+}
+.content{
+	min-height: 100%;
+	padding: 0 0 5.32rem 0;
+}
+.content_ver{
+	padding: 0 0 2.92rem 0;
+}
+/* 店铺信息 */
+.merchant_bg{
+	width: 100%;
+	height: 4.2rem;
+	background:url(../images/apppaybg.jpg) no-repeat center center;
+	background-size: 1.8rem 1.8rem;
+	position: relative;
+	text-align: center;
+	font-size: .34rem;
+	line-height: 7rem;
+}
+/* 输入金额 */
+.pay_account{
+	width: 90%;
+	height: 1rem;
+	line-height: .96rem;
+	margin: 0 auto;
+	border:2px solid #dcdcdc;
+	border-radius: .1rem;
+	background: url(../images/apppayicon.gif) no-repeat .42rem center;
+	background-size: .22rem .29rem;
+	padding: 0 0 0 1rem;
+	position: relative;
+}
+.bor{
+	border:2px solid #ffb500;
+}
+.delicon{
+	position: absolute;
+	width:.6rem;
+	height: .6rem;
+	top:.18rem;
+	right: .2rem;
+	background: url(../images/del.png) no-repeat center center;
+	background-size: .6rem .6rem;
+}
+#payAccount{
+	font-size: .40rem;
+}
+.pay_account p{
+	color: #ccc;
+	height: 1rem;
+}
+.pay_account .in{
+	color: #333;
+}
+.main{
+	width:100%;
+	position: relative;
+	height: 5.22rem;
+	margin-top: -5.32rem;
+}
+.main_ver{
+	height: 2.92rem;
+	margin-top: -2.92rem;
+}
+.info{
+	width: 100%;
+	height: .32rem;
+	line-height: .3rem;
+	background: url(../images/appicon2.gif) no-repeat .3rem center ;
+	background-size: .5rem .3rem;
+	margin: .1rem 0;
+}
+.info p{
+	float: left;
+	height: .24rem;line-height: .24rem;
+	font-size: .24rem;
+	border-left: 2px solid #999;
+	margin: .03rem 0 .03rem 1rem;
+	text-indent: .1rem;
+	color: #999;
+}
+/* 自定义键盘 */
+.keyboard{
+	width: 100%;
+	/* height: 4.8rem; */
+	position: relative;
+}
+.keyboard .row{
+	width: 100%;
+}
+.keyboard .row span{
+	float: left;
+	width: 25%;
+	height: 1.2rem;
+	text-align: center;
+	line-height: 1.2rem;
+	border-bottom: 1px solid #afafaf;
+	border-right: 1px solid #afafaf;
+	background:#ebebeb;
+	font-size: .3rem;
+	color: #333;
+}
+.keyboard .row .vertical{
+	height: .6rem;
+	line-height: .6rem;
+}
+.keyboard .row span.choose{
+	background: #d3d3d3;
+}
+.keyboard .row:first-child span:last-child{
+	border-right: none;
+}
+.keyboard .row:nth-child(4) span{
+	border-bottom: none;
+}
+.keyboard .row:first-child span{
+	border-top: 1px solid #afafaf;
+	color: #333;
+}
+.keyboard .pay_confirm{
+	position: absolute;
+	width: 25%;
+	height: 3.6rem;
+	top: 1.2rem;
+	right: 0;
+	text-align: center;
+	padding: 1.4rem 0 0 0 ;
+	color:#fff;
+	background: #ffb500;
+}
+.pay_confirm>span{
+	color:#fff;
+	font-size:.32rem;
+}
+.keyboard .pay_confirm_ver{
+	background:#aaa;
+}
+/*支付中动画*/
+.pay_confirm_ver>span{
+	position:absolute;
+	/*width:.64rem;*/
+	text-align:left;
+	color:#fff;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+.pay_confirm_ver>span:after {
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+	animation: ellipsis 1.5s infinite;
+	content: "\2026"; /* ascii code for the ellipsis character */
+}
+@keyframes ellipsis {
+	from {
+		width: 2px;
+	}
+	to {
+		width: 15px;
+	}
+}
+
+
+.keyboard .vertical2{
+	height: 1.8rem;
+	top: .6rem;
+	padding: .5rem 0 0 0 ;
+}
+/* toast */
+.toast{
+	position: fixed;
+	top:0;
+	left: 50%;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .32rem;
+	background: rgba(0,0,0,.8);
+	padding: 0 .8rem;
+	color: #fff;
+	border-radius: .1rem;
+	margin:3.8rem 0 0;
+	transform: translate(-50%,0);
+	white-space: nowrap;
+	display: none;
+}
+.toast_ver{
+	margin: 1rem 0 0;
+}

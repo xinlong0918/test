@@ -1,0 +1,87 @@
+/* 头部 */
+.header{
+	height: .9rem;
+	line-height: .9rem;
+	font-size: .34rem;
+	color: #fff;
+	background: #000;
+	text-align: center;
+	position: relative;
+}
+.header a{
+	position: absolute;
+	width: .43rem;
+	height: .43rem;
+	top: .23rem;
+	left: .25rem;
+	background: url(../images/apppayconfirm.gif) no-repeat center center;
+	background-size: .23rem .43rem;
+}
+body{
+	background:#e8ba4b;
+}
+.main{
+	width: 92%;
+	height: 8.45rem;
+	margin: .4rem auto .2rem;
+	background: #fff;
+	border-radius: .1rem;
+}
+.main_bg{
+	width: 100%;
+	height: 3.5rem;
+	background: url(../images/apppaysuccess.jpg) no-repeat center 1rem ;
+	background-size: 1.74rem 1.74rem;
+	line-height: 6rem;
+	text-align: center;
+	font-size: .28rem;
+}
+.main_count{
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .72rem;
+	text-align: center;
+}
+.main_merchant{
+	text-align: center;
+	height: .78rem;
+	line-height: .78rem;
+	font-size: .26rem;
+	margin: .7rem 0 .55rem 0 ;
+}
+.main_merchant p{
+	display: inline-block;
+	border-top: 2px dashed #afafaf;
+	padding: 0 .24rem;
+	font-size: .28rem;
+}
+.action_btn{
+	height: 1rem;
+	width: 100%;
+	text-align: center;
+}
+.action_btn button{
+	width: 4rem;
+	height: 1rem;
+	border: none;
+	border-radius: .5rem;
+	background: #ffb500;
+	font-size: .32rem;
+	color: #fff;
+}
+
+.banner{
+	width: 92%;
+	margin: 0 auto;
+	background: #e8ba4b;
+	border-radius: .1rem;
+}
+.banner a{
+	display:block;
+	width:100%;
+}
+.banner a img{
+	display:block;
+	width: 100%;
+	border-radius: .1rem;
+}

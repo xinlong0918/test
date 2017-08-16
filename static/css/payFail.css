@@ -1,0 +1,46 @@
+body{
+	background:#e8ba4b;
+}
+.main{
+	height: 8.45rem;
+	margin: .4rem .3rem .2rem;
+	padding: 0.1px;
+	border-radius: .1rem;
+	background:#fff url(../images/payfail.jpg) no-repeat center 1rem;
+	background-size: 1.76rem 2.25rem;
+}
+.main p{
+	height:.3rem;
+	line-height: .3rem;
+	margin: 5rem 0 0 0 ;
+	text-align: center;
+	font-size: .3rem;
+}
+.btn{
+	width:4rem;
+	height: 1rem;
+	margin: 1.6rem auto 0;
+}
+.main button{
+	width:4rem;
+	height: 1rem;
+	border: none;
+	background: #ffb500;
+	border-radius: .5rem;
+	font-size: .3rem;
+	color: #fff;
+}
+.banner{
+	height: 2.6rem;
+	margin: .4rem .3rem .2rem; 
+	border-radius: .1rem;
+	position: relative;
+	background: #fff;
+}
+.banner img{
+	max-width: 5.13rem;
+	max-height: 1.55rem;
+	position: absolute;
+	top:0;bottom: 0;left: 0;right: 0;
+	margin: auto;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领取优惠券</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+    <style type="text/css">
+        .header {
+            color: #000;
+            height: .9rem;
+            line-height: .9rem;
+            font-size: .3rem;
+            text-indent: .9rem;
+            background: #eff2f7 url("data:image/gif;base64,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") no-repeat .3rem center;
+            background-size: .46rem;
+        }
+
+        .coupons {
+            width: 100%;
+        }
+
+        .coupons-title {
+            height: .9rem;
+            line-height: .9rem;
+            color: #333;
+            font-size: .3rem;
+            text-indent: .3rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .coupons-title > span {
+            color: #f00;
+        }
+
+        .coupons-list{
+            padding: 0 .3rem;
+        }
+        .coupons-item{
+            border-bottom: 1px solid #e1e1e1;
+            height: 1.4rem;
+            position: relative;
+            padding: .1px;
+        }
+        .coupons-item>h3{
+            height: .32rem;
+            line-height: .32rem;
+            text-indent: .5rem;
+            color: #000;
+            background: url("data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAP////xwcfxwc/tvcv1xcvxxdPtwc/xyc/hwcvpydPlxc/dyc/p6e/t7fPh6e/l7fPqCg/2MjvyLjfmLjP2VlvyVlv2dnv2ur/yztP25uvq4uf7Awf/T1Pxvdftwdfh6ffl9gPuUl/ulqP2usf6ws/2vsv6ztf23uf24u/zS0//Z2v7c3f3b3Pza2/7k5f/b3f7a3P3t7v/Z3P/29//3+P/2+f/2+v/9/v/8///+//7+//z///7///3//P7//f//+////f7+/P/++v38+v/39f729P7v7P/18/7d2P/29f/39vzLx//19PmWkfuwq/7Dv/3Kx//Sz/rS0PvT0f3b2fpxa/hxbfpzb/lybvhzbvhzb/l0cPh7d/h9efiFgv2MiP2Wkf2Vkv6fm/qfnPumo/2vrfyvrf23tfy4tf25tvq5t/7c2/3b2v/k4/7k4/1vbfxxbvtwbfpwbf1yb/xwb/xyb/tvbvtxbvpwbvdwbf1xcPxycPtxb/pyb/hxbvxycftxcPtzcPpwcPpycPpzcPlyb/hyb/dxbv1zcvxycvtxcftzcflzcPhwcPhzcPpycvlxcfl0cfhycfdxcPZycPhycvp0dPlzc/h0c/l1dP56eft5d/p6d/97evp6eft9evh7efh9e/h+fv6Eg/uDgvmDgfiEhP2Li/yMivyMi/uNjPqMi/2Tk/2VlPyUk/uVk/qUkvyWlPqWlPmVlfudnf6mpfympf2wsP64uP23t/y4t/7BwP3BwP3Kyf3LyvzKyf7S0f/b2/7a2v/t7f7u7v3t7f/19f7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAMkALAAAAAAgACAAAAj/AIng8qTJEqaDCBMqXAjIkqBRZ3KUyHPoj6E+efL0udino8ePILMIqDNo0QkvfSINKrmoZaSWMGPKdGnIYh9QjDYaGmDIkMtIdfA46hM0Us9FhiLhaXmRo6SceV5+XHQo0lBDjiApUjSoDoM+WfrMadrxaUekfRZtjFQAjICLkR60ioDFZ6EDfbSQ7WPWUJ6kLSctusCjl1pHFYTkytIJBQg6fRztNWs0ZUmgwYBE4POnUawAugzpCvDGFNLJOQf9WVRnY59SAVwoNVRHTI81kfrcErKEAlqnqVO2/jNpTRBZWT5EkuMqAJpJL20FKRYH9UY8k1b3+dTEmIDcfQ5Z/wiQhsBFSrdUTbJu6E6kO3zqrOExLHKhRYpS/VCTMpUFWxpEgUpNB0TCSE6LZOHIAoicQkMALBgiwiu7oPBLADb0EEAPPSCDQw9PJEAHHnE8gmBHdcShAjI6DGPIET/gEEQAyBzDhC5m0BLGS7kNskAkgOQ0SQFzQFJLAB0gEwMfs8CyCiICwPDDIJAssMcgfQjQkSIK/BFkH384ssgfNxjBSQ9VDOKBAEsdIkUQpNzRkyHfGWAUfITk1BMeCbQwxiJBCKNFHoVMkgcfGwRAxgJ9DGLIFYZYUcgg0CWSU0eGxMHKIQIEsQKdPYEpSwBQ5GYIo5HkcRWVOb21wB985P+xSA8sTJLFRUjVoYMMi+QWZh0L9rFUJq2u59MigwQxTG6TTCKZIVTo8MVFPG2URR0CLJBnH5PQ4UhuYgbQBrd1wMGHHnWUoQMHiKTUxxQjRGKqJTll8YcAGg2CBxBshNXrApM2oAQSDoxFiQ7CIHsIHpdc6lJHB+gwwyLZ1bHcq2v84MsAfUiwQwq33tEHJDlFsloeWrwURBJYRZKFWj518UIAvIQymhNh/THIgWnloe8elcShQwxy2JHAS5PcgdQENfigQwBFCKDIUIpskZpRYtIZABsLzPHSrYvgYcgcEABDjBuvNNLSIYMIcukfeHT9Epb3FfLdvY2mFccghzhc4igefxyAACaHYgTSTIjDFJYidRiCiSTyRi75nJRXTrkjdWjRxwB+iHLrHyBpBNLoHyXwaiSHgGKCUaDzQfrrILWWFiUZDEHCJgUpJMnuvPfuuySYcBFICBjgEBAAOw==") no-repeat 0 center;
+            background-size: .32rem;
+            margin: .33rem 0 0 0;
+            font-size: .32rem;
+        }
+        .coupons-item>time{
+            text-indent: .5rem;
+            height: .22rem;
+            line-height: .22rem;
+            color: #999;
+            margin: .23rem 0 0 0;
+            display: block;
+            font-size: .22rem;
+        }
+        .coupons-item .coupons-right{
+            position: absolute;
+            top:0;right: 0;height: 1.4rem;text-align: right;
+        }
+        .coupons-right>p{
+            font-size: .24rem;
+            color: #999;
+            height: .24rem;line-height: .24rem;
+            margin: .26rem 0 0 0;
+        }
+        .coupons-right>span{
+            position: absolute;right: 0;top: .66rem;
+            width: 1.16rem;
+            height: .46rem;line-height: .53rem;
+            font-size: .26rem;
+            border-radius: .23rem;
+            background: #fff;
+            text-align: right;
+            color: #333;
+        }
+        .coupons-ylq span{
+            background: #f5f5f5;
+            text-align: center;
+            color: #ccc;
+        }
+        .coupons-yqg span{
+            background: #fff;
+            text-align: right;
+            color: #333;
+        }
+        .coupons-lq span{
+            background: #ffb500;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+    <script src="../static/js/flexible.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div class="header">
+    饭饭小店
+</div>
+<div class="coupons">
+    <div class="coupons-title">优惠券（<span>5</span>）</div>
+    <div class="coupons-list">
+        <div class="coupons-item coupons-ylq">
+            <h3>8元代金券</h3>
+            <time>2017.07.18 - 2017.08.18</time>
+            <div class="coupons-right">
+                <p>113人已领</p>
+                <span>已领取</span>
+            </div>
+        </div>
+        <div class="coupons-item coupons-yqg">
+            <h3>9元代金券</h3>
+            <time>2017.07.18 - 2017.08.18</time>
+            <div class="coupons-right">
+                <p>113人已领</p>
+                <span>已抢光</span>
+            </div>
+        </div>
+        <div class="coupons-item coupons-lq">
+            <h3>10元代金券</h3>
+            <time>2017.07.18 - 2017.08.18</time>
+            <div class="coupons-right">
+                <p>113人已领</p>
+                <span>领取</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
