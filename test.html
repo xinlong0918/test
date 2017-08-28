@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>111111111111111</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta charset="utf-8">
 	<style type="text/css">
 	</style>
+	<script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement
+                , resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+	</script>
+	<script src="js/vconsole.min.js"></script>
 </head>
 <body>
-<button onclick="fun">测试</button>
+	<button style="" onclick="fun()">点击</button>
 </body>
 <script type="text/javascript" src="jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
-	function fun() {
 
+function fun() {
+    var wechatVersion = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i)[1] ;
+    console.log(wechatVersion)
+    var arr = wechatVersion.split(".")
+	console.log(arr)
+	if(arr[0]==6&&arr[1]>=5&&arr[2]>=7||arr[0]>6){
+
+        alert(wechatVersion)
     }
+}
+
 </script>
 </html>

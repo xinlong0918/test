@@ -3,29 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>kaoqin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait"/>
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
+    <style type="text/css">
+        html,body{
+            min-height: 100%;
+            min-width: 100%;
+            padding: .6rem;
+        }
+        button{
+            width: 2rem;
+            height: 1rem;
+            z-index: 1000000;
+        }
+        .loading-animation{
+            position: fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            background: rgba(0,0,0,0);
+            min-height: 100%;
+            z-index:10000;
+        }
+        .loading-animation>img{
+            position: absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            width: .8rem;
+            height: .8rem;
+            margin: auto;
+            animation: imgRotate 2s infinite linear;
+            -webkit-animation: imgRotate 2s infinite linear;
+        }
+        @keyframes imgRotate {
+            from {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes imgRotate {
+            from {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement
+                , resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
 </head>
 <body>
-
+<button onclick="loadingDonghuaShow()">转</button>
 </body>
-
+<script src="jquery-1.10.1.min.js"></script>
 <script>
-    /*
-    *   三月 2 2 5 2 2                13
-    *   四月 2 2 2 2 6 11 2 2 7 9     45
-    *   五月 4 2 2                    8
-    *
-    *   加班 共 66 小时
-    *
-    *   请假 0502、0503、0531、0623. 共32小时
-    *
-    *
-    *   剩余 66-32 = 34小时
-    *
-    *
-    *
-    *
-    *
-    * */
+
+
+    function loadingDonghuaShow() {
+        var oDiv = $("<div>");
+        oDiv.attr("class", "loading-animation");
+        oDiv.append("<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5ZmEzZWYxMC1jMTc0LTQxOWQtYjM0MC1hYzA0MWJkZTAxMjAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDE1QTMzQ0E3RjY0MTFFNzlBOTRCQTJFMjUwMTYzMkYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDE1QTMzQzk3RjY0MTFFNzlBOTRCQTJFMjUwMTYzMkYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowODk5OGQ5Yy1mMDQ0LTRhMjEtOTEwMC0zYzdhMTA4MTk5NTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OWZhM2VmMTAtYzE3NC00MTlkLWIzNDAtYWMwNDFiZGUwMTIw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'>")
+        oDiv.appendTo($("body"))
+    }
+    function loadingDonghuaHide() {
+        $(".loading-animation").remove();
+    }
 
 
 </script>

@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>promise</title>
+    <style>
+        body{
+            background: url(img/jiazaidonghua.png);
+        }
+
+    </style>
 </head>
-<body>
+<body >
 
 </body>
 <script>
     function get(str) {
         var promise = new Promise(function (resolve,reject) {
-            var ran = parseInt(Math.random()*6)+1;
-            console.log('random:'+ran);
-            str = str + ran;
-            resolve(str);
+            setTimeout(function () {
+                var ran = parseInt(Math.random()*6)+1;
+                console.log('random:'+ran);
+                str = str + ran;
+                resolve(str);
+            }, 2000)
+
         })
         return promise;
     }

@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<style type="text/css">
-		*{
-			margin:0;padding: 0;box-sizing:border-box;
-		}
-		
-	</style>
-	<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+    <title>2222222222222</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    </style>
+    <script type="text/javascript" src="jquery-1.10.1.min.js"></script>
 </head>
 <body>
-	<div class="div1">
-        abd
-    </div>
-	<script type="text/javascript">
-    $("body").on("click",".div1",function(){
-        console.log("div")
-    })
-	
+<div class="div1">
+    abd
+</div>
+<script type="text/javascript">
+
+
+    if (window.history && window.history.pushState) {
+
+        $(window).on('popstate', function () {
+            var hashLocation = location.hash;
+            var hashSplit = hashLocation.split("#!/");
+            var hashName = hashSplit[1];
+
+            if (hashName !== '') {
+                var hash = window.location.hash;
+                if (hash === '') {
+                    location.href = "test.html"
+                }
+            }
+        });
+
+        history.pushState('forward', "aslkf", './#forward');
+    }
+
+
+//    history.pushState({page: 2}, "title 2", "?page=2");
+//    history.replaceState({page: 3}, "title 3", "?page=3");
+//    history.back(); // alerts "location: http://example.com/example.html?page=1, state: {"page":1}"
+//    history.back(); // alerts "location: http://example.com/example.html, state: null
+//    history.go(2);
 
 
 
-
-	</script>
+//    window.addEventListener("popstate", function(e) {
+//        alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+//        location.href = document.referrer
+//    }, false);
+//
+//    pushHistory()
+//
+//    function pushHistory() {
+//        var state = {
+//            title: "title",
+//            url: "http://192.168.51.214:8008/test/test.html"
+//        };
+//        window.history.pushState(state, "title", "http://192.168.51.214:8008/test/test.html");
+//    }
+</script>
 </body>
 </html>
