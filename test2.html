@@ -18,25 +18,33 @@
     abd
 </div>
 <script type="text/javascript">
+//    var state = {
+//        title: "title",
+//        url: location.href
+//    };
+//    history.pushState(state, "确认支付", location.href);
+//
+//    window.onpopstate = function(event) {
+//        location.href = "test0.html"
+//    };
 
-
-    if (window.history && window.history.pushState) {
-
-        $(window).on('popstate', function () {
-            var hashLocation = location.hash;
-            var hashSplit = hashLocation.split("#!/");
-            var hashName = hashSplit[1];
-
-            if (hashName !== '') {
-                var hash = window.location.hash;
-                if (hash === '') {
-                    location.href = "test.html"
-                }
-            }
-        });
-
-        history.pushState('forward', "aslkf", './#forward');
-    }
+//    if (window.history && window.history.pushState) {
+//
+//        $(window).on('popstate', function () {
+//            var hashLocation = location.hash;
+//            var hashSplit = hashLocation.split("#!/");
+//            var hashName = hashSplit[1];
+//
+//            if (hashName !== '') {
+//                var hash = window.location.hash;
+//                if (hash === '') {
+//                    location.href = "微信版本.html"
+//                }
+//            }
+//        });
+//
+//        history.pushState('forward', "aslkf", './#forward');
+//    }
 
 
 //    history.pushState({page: 2}, "title 2", "?page=2");
