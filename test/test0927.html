@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        a{
+            font-size: 40px;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+<audio id="houlai" loop preload src="http://yinyueshiting.baidu.com/data2/music/e01eb018f65e1499f7f5db319a9e29f5/540246705/7901421506402061128.mp3?xcode=701185e8f8879db6b50a78e8b32aeef1">
+    您的浏览器不支持 audio 标签。
+</audio>
+<button onclick="audioPlay()">播放</button>
+<a href="https://u.jyallpay.com/pay/dist/#/getMoreCoupon">详情</a>
+<a href="https://u.jyallpay.com/pay/dist/#/receiveCoupons?flag=1">领取</a>
+<script>
+    function audioPlay() {
+        var audio = document.getElementById("houlai");
+        audio.setAttribute("autoplay", "autoplay")
+//        console.log(audio)
+//        audio.play();
+    }
+    var i1 = setInterval(function () {
+        $("#query_ticket").click();
+    }, 2000)
+    var i2 = setInterval(function () {
+        var checi = $("#ticket_2500000G510E");
+        var text = checi.find("#ZE_2500000G510E").find("div").text()
+        var btn = checi.find("td").last().find("a")
+        console.log("text", text)
+        if (text != "无" && text != "") {
+            btn.click();
+            clearInterval(i1)
+            clearInterval(i2)
+            alert("抢到票了")
+        }
+    }, 2000)
+</script>
+</body>
+</html>

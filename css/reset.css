@@ -1,0 +1,93 @@
+html{font-size:62.5%;tap-highlight-color:rgba(255,255,255,0);-webkit-tap-highlight-color:rgba(255,255,255,0)}
+html,body{height:100%;width:100%;}
+body{    margin: 0 auto;
+    max-width: 640px;
+    min-width: 300px;
+    background: #fff;}
+*{padding:0;margin:0;font-style:normal;font-weight:400;font-family:"微软雅黑",arial;color:#333;font-size:15px;box-sizing:border-box;}
+ul,li{list-style:none}
+input[type=text],textarea{-webkit-appearance:none;border:0;outline:medium}
+input[type=button]{-webkit-appearance:none}
+input[type=search]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:none}
+a{color:#2b2b2b;text-decoration:none;-webkit-touch-callout:none}
+a:visited,a:hover{text-decoration:none}
+.clear:before,.clear:after{content:".";display:block;height:0!important;line-height:0!important;visibility:hidden}
+.clear:after{clear:both}
+.clear{zoom:1}
+.fl{float:left}
+.fr{float:right}
+input,button,select,textarea{outline:0}
+textarea{resize:none}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*zoom:1}
+.toast{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: rgba(0,0,0,.7);
+    padding: 0 10px;
+    color: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    white-space: nowrap;
+    display: none;
+}
+.toast_ver{
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*
+    loading动画
+*/
+.loading-animation{
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background: rgba(0,0,0,0);
+    min-height: 100%;
+    z-index: 30;
+}
+.loading-animation2{
+    background: #fff;
+}
+.loading-animation>img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    width: .8rem;
+    height: .8rem;
+    margin: auto;
+    animation: imgRotate 2s infinite linear;
+    -webkit-animation: imgRotate 2s infinite linear;
+}
+@keyframes imgRotate {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes imgRotate {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
