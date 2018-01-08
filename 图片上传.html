@@ -21,7 +21,8 @@
 	                document.querySelector('body').appendChild(img);
 	            };
 	            var xhr = new XMLHttpRequest();
-	            xhr.open('POST', 'http://m.pay.jyall.com/affiliated/image');
+//	            xhr.open('POST', 'http://m.pay.jyall.com/affiliated/image');
+	            xhr.open('POST', 'http://bm.jyallpay.com/qrpay-manager/file/upload');
 
 	            xhr.onload = function () {
 	                var data = JSON.parse(xhr.response);
