@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+</head>
+<body>
+    <h1>test</h1>
+    <button onclick="func()">存储到sessionStorage</button>
+    <img id="img" alt="">
+</body>
+<script>
+    window.onload = function () {
+        alert('onload')
+        if (sessionStorage.getItem('url')) {
+            alert('set url')
+            document.getElementById("img").src = sessionStorage.getItem('url');
+        }
+    }
+    function func () {
+        alert('set session')
+        sessionStorage.setItem('url', 'http://static.jyall.com/jyall_shop/dest/home/images/jgj.png');
+        document.getElementById("img").src = sessionStorage.getItem('url');
+    }
+</script>
+</html>
