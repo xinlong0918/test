@@ -1,0 +1,10 @@
+{
+    "name": "nodeio",
+    "version": "0.0.1",
+    "dependencies": {
+        
+    },
+    "scripts": {
+        "test": "node index.js"
+    }
+}

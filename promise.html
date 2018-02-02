@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <title>promise</title>
     <style>
-        body{
+        body {
             /*background: url(img/jiazaidonghua.png);*/
         }
+
         img {
             width: 50%;
         }
     </style>
+    <script>
+        var pro = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve('success')
+                reject('fail')
+            }, 1000)
+        })
+
+        pro.then(res=>{
+            console.log(0, res)
+        }).catch(error=>{
+            console.log(0, error)
+        })
+
+        setTimeout(()=>{
+            pro.then(res=>{
+                console.log(2, res)
+            }).catch(error=>{
+                console.log(2, error)
+            })
+        },2000)
+    </script>
 </head>
-<body >
-<img src="img/jiazaidonghua.png" >
+<body>
+<img src="img/jiazaidonghua.png">
 <img src="https://m.360buyimg.com/mobilecms/jfs/t5668/159/160398199/14046/acfe1fa3/591d9424N068a7ad0.png">
 </body>
 <script>
@@ -21,11 +44,12 @@
     document.addEventListener()
 
     document.removeEventListener()
+
     function get(str) {
-        var promise = new Promise(function (resolve,reject) {
+        var promise = new Promise(function (resolve, reject) {
             setTimeout(function () {
-                var ran = parseInt(Math.random()*6)+1;
-                console.log('random:'+ran);
+                var ran = parseInt(Math.random() * 6) + 1;
+                console.log('random:' + ran);
                 str = str + ran;
                 resolve(str);
             }, 2000)
@@ -33,6 +57,7 @@
         })
         return promise;
     }
+
     get(0).then(function (res) {
         console.log(res);
         return get(res);
